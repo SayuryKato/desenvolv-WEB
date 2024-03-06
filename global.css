@@ -76,3 +76,62 @@ body {
         'GRAD' 0,
         'opsz' 24
 }
+
+/*-----------FIM DA CONFIGURAÇÃO DO ASIDE-----------*/
+
+.containerDivisao {
+    display: flex;
+    flex-direction: row;
+}
+
+.segundaTela{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.txtAtencao{
+    color: red;
+    margin-bottom: 30px;
+}
+
+.botao {
+    width: 245px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #37A433;
+    color: white;
+    font-size: 16px;
+    margin: 40px 0px 40px 0px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #37a433ac;
+}
+
+.drop_zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 600px;
+    border-radius: 8px;
+    border: 2px dashed #bcbaba;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px; 
+    color: #666;
+}
+
+.fileInput {
+    display: none;
+}
+
+.botaoFile{
+    background-color: #0f8f04;
+}
