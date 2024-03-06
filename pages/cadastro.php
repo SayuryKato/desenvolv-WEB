@@ -1,5 +1,10 @@
+<?php
+include "../function/login.func.php";
+require_once "../_conn/connect.php";
+$connect = Connect();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -21,6 +26,28 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_POST['cadastro'])) {
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+        $confSenha = filter_input(INPUT_POST, 'confSenha', FILTER_SANITIZE_SPECIAL_CHARS);
+        if ($senha != $confSenha) {
+            echo "<div>As senhas não coincidem!</div>";
+        } else {
+            $cad = CadUser($connect, $email, $senha);
+
+            if ($cad == true) {
+                echo "<div>
+                cadstrado com sucesso!
+                </div>";
+            } else {
+                echo "<div>
+            Erro ao cadastrar usuário!
+            </div>";
+            }
+        }
+    }
+    ?>
     <main class="container">
         <div class="left-side">
             <div class="figura">
@@ -38,18 +65,20 @@
                     <label for="senha">Senha*</label>
                     <input class="campInput" type="password" name="senha" id="senha" placeholder="*********">
                     <span>
-                        <img src="../assets/icons/senha.png" alt="icon de senha">
+                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha"
+                            onclick="mostrarSenha('senha')">
                     </span>
                 </div>
                 <div class="input">
                     <label for="confSenha">Confirmar Senha*</label>
                     <input class="campInput" type="password" name="confSenha" id="confSenha" placeholder="*********">
                     <span>
-                        <img src="../assets/icons/senha.png" alt="icon de senha">
+                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha"
+                            onclick="mostrarSenha('confSenha')">
                     </span>
                 </div>
                 <div class="central">
-                    <button class="botao" type="submit">Cadastrar</button>
+                    <button class="botao" type="submit" name="cadastro">Cadastrar</button>
                     <p>Já é usuário?
                         <a href="../index.html">Login</a>
                     </p>
@@ -62,6 +91,7 @@
             </figure>
         </div>
     </main>
+    <script src="../js/mostrarSenha.js"></script>
 </body>
 
 </html>
