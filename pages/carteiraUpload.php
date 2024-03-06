@@ -23,10 +23,10 @@
                     <p>OU</p>
                     <div>
                         <label class="botao" for='selecao-arquivo'>Fazer Upload</label>
-                        <input id='selecao-arquivo' type='file' class="fileInput">
+                        <input id='selecao-arquivo' type='file' class="fileInput" accept="image/*">
                     </div>
                 </div>
-                <input type="file" class="fileInput" multiple>
+                <input type="file" class="fileInput" accept="image/*" multiple>
             </div>
         </div>
     </main>
