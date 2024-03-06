@@ -27,7 +27,7 @@ $connect = Connect();
 </head>
 
 <body>
-    <?php
+    <!-- <?php
     if (isset($_POST['enviar'])) {
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -44,7 +44,7 @@ $connect = Connect();
             </div>";
         }
     }
-    ?>
+    ?> -->
     <main class="container">
         <div class="left-side">
             <div class="figura">
@@ -53,7 +53,7 @@ $connect = Connect();
                 </figure>
                 <p>Login RU</p>
             </div>
-            <form action="" method="post" class="forms">
+            <form action="pages/carteiraUpload.php" method="post" class="forms">
                 <div class="input">
                     <label for="email">E-mail</label>
                     <input class="campInput" type="email" name="email" id="email" placeholder="Digite seu e-mail">
@@ -85,7 +85,7 @@ $connect = Connect();
         </div>
         <div class="right-side">
             <figure class="imgLateral">
-                <img class="imgGrande" src="assets/imgGLogin.png" alt="Foto Lateral">
+                <img class="imgGrande" src="assets/food.png" alt="Foto Lateral">
             </figure>
         </div>
     </main>
