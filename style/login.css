@@ -74,11 +74,13 @@ label{
     position: relative;
 }
 
-.input img {
+.icone{
     position: absolute;
     right: 12px;
     top: 77%;
     transform: translateY(-50%);
+
+    cursor: pointer;
 }
 
 .campInput {
@@ -120,4 +122,9 @@ label{
     color: white;
     font-size: 16px;
     margin: 40px 0px 40px 0px;
+    cursor: pointer;
+}
+
+.botao:hover{
+    background-color: #37a433ac;
 }
