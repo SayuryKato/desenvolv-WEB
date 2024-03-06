@@ -27,7 +27,7 @@ body{
 
 .right-side {
     height: 92%;
-    flex: 1;
+    flex: .9;
     display: flex;
     flex-direction: column;
     justify-content: center;

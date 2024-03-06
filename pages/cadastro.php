@@ -13,15 +13,13 @@ $connect = Connect();
     <link rel="stylesheet" href="../style/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
-    @media screen and (max-width: 768px) {
-        .right-side {
-            display: none;
+        @media screen and (max-width: 768px) {
+            .right-side {
+                display: none;
+            }
         }
-    }
     </style>
 </head>
 
@@ -65,22 +63,20 @@ $connect = Connect();
                     <label for="senha">Senha*</label>
                     <input class="campInput" type="password" name="senha" id="senha" placeholder="*********">
                     <span>
-                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha"
-                            onclick="mostrarSenha('senha')">
+                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha" onclick="mostrarSenha('senha')">
                     </span>
                 </div>
                 <div class="input">
                     <label for="confSenha">Confirmar Senha*</label>
                     <input class="campInput" type="password" name="confSenha" id="confSenha" placeholder="*********">
                     <span>
-                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha"
-                            onclick="mostrarSenha('confSenha')">
+                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha" onclick="mostrarSenha('confSenha')">
                     </span>
                 </div>
                 <div class="central">
                     <button class="botao" type="submit" name="cadastro">Cadastrar</button>
                     <p>Já é usuário?
-                        <a href="../index.html">Login</a>
+                        <a href="../index.php">Login</a>
                     </p>
                 </div>
             </form>
