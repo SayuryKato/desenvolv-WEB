@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
+*{
+  margin: 0;
+  padding: 0;
+}
 .search-container {
   display: flex;
   align-items: center;
-  width: 40vh; /* Ajuste a largura conforme necessário */
+  width: 40vh; 
   margin-top: 3%;
   margin-left: 3%;
   
   height: 80px;
 }
 #pesquisa {
-  flex: 1; /* Ocupa o espaço disponível */
+  flex: 1; 
   padding: 8px;
   border-radius: 30px;
 }
 .icon-lupa {
   width: 27px;
   height: 27px;
-  margin-left: 8px; /* Ajuste o espaçamento entre o campo de pesquisa e o ícone */
+  margin-left: 8px; 
 }
 #content {
   margin-top: 10%;
@@ -28,14 +30,14 @@
   padding: 20px;
   
   height: 70vh;
-  width: 60vh; /* largura*/
+  width: 60vh; 
 }
 
 .square {
   text-align: center;
   width: 250px;
   height: 270px;
-  background-color: hsl(0, 0%, 100%); /* Add your desired background color */
+  background-color: hsl(0, 0%, 100%); 
   margin-bottom: 20px;
   border: 2px solid #0b3d04;
   border-radius: 20px;
@@ -43,12 +45,16 @@
   position: relative;
 }
 .square:hover {
-  border: 3px solid #20cd62; /* Ajuste a cor da borda ao passar o cursor */
+  border: 3px solid #20cd62; 
+}
+.square a {
+    text-decoration: none; 
+    color: black; 
 }
 .circle-big {
-  width: 140px; /* Adjust the circle size as needed */
-  height: 140px; /* Adjust the circle size as needed */
-  background-color: rgba(0, 159, 16, 0.08); /* Add your desired circle color */
+  width: 140px; 
+  height: 140px; 
+  background-color: rgba(0, 159, 16, 0.08); 
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -60,9 +66,9 @@
 }
 
 .circle-small {
-  width: 35px; /* Adjust the circle size as needed */
-  height: 35px; /* Adjust the circle size as needed */
-  background-color: rgba(0, 159, 16, 0.08);; /* Add your desired circle color */
+  width: 35px;
+  height: 35px; 
+  background-color: rgba(0, 159, 16, 0.08);; 
   border-radius: 50%;
   position: absolute;
   left: 88%;
@@ -73,18 +79,38 @@
   align-items: right;
 }
 .icon {
-  width: 70%; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure the image doesn't exceed its container */
-  max-height: 100%; /* Ensure the image doesn't exceed its container */
+  width: 70%; 
+  height: auto; 
+  max-width: 100%; 
+  max-height: 100%; 
 }
 .icon-small {
-  width: 25px; /* Adjust the width as needed */
-  height: 25px; /* Maintain aspect ratio */
+  width: 25px; 
+  height: 25px; 
   position: absolute;
   margin-top: 4px;
 }
 .square h3 {
   font-size: 20px;
-  margin-top: 180px; /* Adjust the spacing between the circle and the heading */
+  margin-top: 180px; 
+}
+
+
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:hover {
+  background-color: #45a049;
 }
