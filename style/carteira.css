@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.imgCarteira{
+    height: 250px;
+    width: 550px;
+    border-radius: 8px;
+    border: 2px dashed #bcbaba;
+}
+
+.juntComp{
+    display: flex;
+    align-items: center;
+}
+
+.horizont{
+    transform: rotate(90deg);
+    margin-left: 10px;
+    cursor: pointer;
+    height: 25px;
+}
