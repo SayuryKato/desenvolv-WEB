@@ -53,7 +53,7 @@ $connect = Connect();
                 </figure>
                 <p>Login RU</p>
             </div>
-            <form action="pages/cardapio.php" method="post" class="forms">
+            <form action="./function/validacaoLogin.php" method="post" class="forms">
                 <div class="input">
                     <label for="email">E-mail</label>
                     <input class="campInput" type="email" name="email" id="email" placeholder="Digite seu e-mail">
