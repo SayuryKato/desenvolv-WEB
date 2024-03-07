@@ -9,13 +9,12 @@ function isActive($page_name, $current_page)
 }
 ?>
 
-<link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 <div>
     <figure class="fotoPerfil">
-        <a href="#">
-            <img class="imgPequena" src="../assets/fotoHomem.png" alt="Logo da UEA">
+        <a href="../pages/perfil.php">
+            <img class="imgPequena" src="../assets/logoUea.png" alt="Logo da UEA">
         </a>
     </figure>
     <div class="menuAside">
