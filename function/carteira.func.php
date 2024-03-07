@@ -16,3 +16,12 @@ function SelCarteira($connect)
     $sel->execute();
     return $sel->fetchAll();
 }
+
+function SelCarteiraId($connect, $idcarteira)
+{
+    $selecao = "SELECT * FROM carteira WHERE id_carteira = :id";
+    $sel = $connect->prepare($selecao);
+    $sel->bindParam(':id', $idcarteira);
+    $sel->execute();
+    return $sel->fetch();
+}

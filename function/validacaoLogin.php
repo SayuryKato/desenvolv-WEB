@@ -15,6 +15,8 @@ if (isset($_POST['enviar']) && !empty($_POST['email']) && !empty($_POST['senha']
     foreach ($sel as $value) {
         if ($value['email_user'] == $email && $value['senha_user'] == $senha) {
             $credenciais_corretas = true;
+            $id_usuario = $value['id_login'];
+            $_SESSION['id_login'] = $id_usuario;
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
             break; // Encerra o loop, pois as credenciais foram encontradas

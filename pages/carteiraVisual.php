@@ -1,7 +1,30 @@
 <?php
+session_start();
+// print_r($_SESSION);
 include "../function/carteira.func.php";
 require_once "../_conn/connect.php";
 $connect = Connect();
+
+
+if (isset($_FILES['arquivoImg'])) {
+    $id_user = $_SESSION['id_login'];
+    $arquivo = $_FILES['arquivoImg'];
+    $pasta = '../arquivos/';
+    $nomeArquivo = $arquivo['name'];
+    $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+    $novoNomeArquivo = uniqid() . '.' . $extensao;
+    $path = $pasta . $novoNomeArquivo;
+
+    if ($arquivo['error']) {
+        die("Falha ao enviar arquivo");
+    } else {
+        $deu_certo = move_uploaded_file($arquivo['tmp_name'], $pasta . $novoNomeArquivo);
+        if ($deu_certo) {
+            $cad = CadCarteira($connect, $id_user, $path);
+            header('Location: carteiraVisual.php');
+        }
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -20,11 +43,32 @@ $connect = Connect();
         <div class="aside">
             <?php include "../components/aside.php" ?>
         </div>
+
         <div class="segundaTela">
             <div class="imgCarteira">
+
+                <?php
+                $carteira_encontrada = false;
+                $seletron = SelCarteira($connect);
+                foreach ($seletron as $value) {
+                    if ($value['id_user'] == $_SESSION['id_login']) {
+                        $carteira_encontrada = true;
+                        echo '<img class="fotoCarteira" src="' . $value['img_carteira'] . '">';
+                        break;
+                    }
+                }
+                if (!$carteira_encontrada) {
+                    echo '<div><p class="txtAtencao">Nenhuma Carteira Cadastrada!</p>';
+                    echo '<form enctype="multipart/form-data" action="" method="post">
+                            <input name="arquivoImg" type="file" class="fileInput" accept="image/*" multiple>
+                            <button type="submit">Enviar</button>
+                        </form></div>';
+                }
+                ?>
+
             </div>
             <div class="juntComp">
-                <button class="botao">Solicitar nova Via</button>
+                <button class="botao">Mudar Foto</button>
                 <img class="horizont" src="../assets/icons/menuPointer.png" alt="menu">
             </div>
         </div>

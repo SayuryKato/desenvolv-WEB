@@ -8,13 +8,6 @@ body{
     width: 100vw;
 }
 
-.imgCarteira{
-    height: 250px;
-    width: 550px;
-    border-radius: 8px;
-    border: 2px dashed #bcbaba;
-}
-
 .juntComp{
     display: flex;
     align-items: center;
@@ -25,4 +18,23 @@ body{
     margin-left: 10px;
     cursor: pointer;
     height: 25px;
+}
+
+.imgCarteira{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 550px;
+    border-radius: 8px;
+    border: 2px dashed #bcbaba;
+    overflow: hidden;
+}
+
+.fotoCarteira {
+    /* background-size: cover;
+    height: 250px; */
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
