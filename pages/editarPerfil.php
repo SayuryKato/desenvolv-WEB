@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Universitário</title>
-    <link rel="stylesheet" href="../style/perfil.css">
+    <link rel="stylesheet" href="../style/editarPerfil.css">
     <link rel="stylesheet" href="../global.css">
 </head>
 
 <body>
     <?php
     // Inclui o arquivo de conexão
-    require_once '../function/consultaPerfil.php';
+    require_once '../function/consultaPerfil.func.php';
     foreach ($results as $row) {
     ?>
         <main class="main-container">
@@ -22,7 +22,7 @@
                 ?>
 
             </div>
-            <form action="" style="width:80%">
+            <form action="../function/editarPerfil.php" style="width:80%" method="POST">
             
                 <div style="display:block">
                     <div class="div1">
@@ -31,6 +31,7 @@
                         </div>
                         <div class="input-container">
                             <div class="div-label">
+                                <input type="text" value="<?php echo $row["id_usuario"]; ?>">
                                 <label for="nome">Nome </label>
                                 <input type="text" value="<?php echo $row["nome"]; ?> ">
                             </div>
@@ -67,10 +68,14 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <input type="submit" value="Cancelar">
-                    <input type="submit" value="Salvar Alterações">
-
+                <div class="div-bts">
+                    <div style="margin-left: 2rem;width:50%">
+                        <input type="submit" value="Cancelar" class="cancelar" name="cancelar">
+                    </div>
+                    <div style="margin-left: 2rem;width:50%">
+                        <input type="submit" value="Salvar Alterações" class="salvar" name="salvar">
+                    </div>
+                    
                 </div>
             </form>
             
