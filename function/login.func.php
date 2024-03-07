@@ -8,3 +8,11 @@ function CadUser($connect, $email, $senha)
     $prop->bindParam(2, $senha);
     return $prop->execute();
 }
+
+function SelUser($connect)
+{
+    $selecao = "SELECT * FROM login";
+    $sel = $connect->prepare($selecao);
+    $sel->execute();
+    return $sel->fetchAll();
+}

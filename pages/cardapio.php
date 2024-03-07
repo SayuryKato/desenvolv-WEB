@@ -1,3 +1,16 @@
+<?php
+session_start();
+// print_r($_SESSION);
+
+if ((!isset($_SESSION['email']) == true) && (!isset($_SESSION['senha']) == true)) {
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    header('Location: ../index.php');
+} else{
+    $logado = $_SESSION['email'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
