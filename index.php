@@ -2,6 +2,7 @@
 include "./function/login.func.php";
 require_once "_conn/connect.php";
 $connect = Connect();
+
 ?>
 
 <!DOCTYPE html>
@@ -14,37 +15,35 @@ $connect = Connect();
     <link rel="stylesheet" href="style/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
-    @media screen and (max-width: 768px) {
-        .right-side {
-            display: none;
+        @media screen and (max-width: 768px) {
+            .right-side {
+                display: none;
+            }
         }
-    }
     </style>
 </head>
 
 <body>
     <!-- <?php
-    if (isset($_POST['enviar'])) {
-        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
-        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+            if (isset($_POST['enviar'])) {
+                $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
+                $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $cad = CadUser($connect, $email, $senha);
+                $cad = CadUser($connect, $email, $senha);
 
-        if ($cad == true) {
-            echo "<div>
+                if ($cad == true) {
+                    echo "<div>
                 cadstrado com sucesso!
                 </div>";
-        } else {
-            echo "<div>
+                } else {
+                    echo "<div>
             Erro ao cadastrar usuário!
             </div>";
-        }
-    }
-    ?> -->
+                }
+            }
+            ?> -->
     <main class="container">
         <div class="left-side">
             <div class="figura">
@@ -53,6 +52,7 @@ $connect = Connect();
                 </figure>
                 <p>Login RU</p>
             </div>
+            <p class="txtAtencao">Usuário Não existe!</p>
             <form action="./function/validacaoLogin.php" method="post" class="forms">
                 <div class="input">
                     <label for="email">E-mail</label>
@@ -62,8 +62,7 @@ $connect = Connect();
                     <label for="senha">Senha</label>
                     <input class="campInput" type="password" name="senha" id="senha" placeholder="*********">
                     <span>
-                        <img class="icone" src="assets/icons/senha.png" alt="icon de senha"
-                            onclick="mostrarSenha('senha')">
+                        <img class="icone" src="assets/icons/senha.png" alt="icon de senha" onclick="mostrarSenha('senha')">
                     </span>
                 </div>
                 <div class="textJuntoEspace">
