@@ -6,8 +6,8 @@ require_once "../_conn/connect.php";
 $connect = Connect();
 
 
+$id_user = $_SESSION['id_login'];
 if (isset($_FILES['arquivoImg'])) {
-    $id_user = $_SESSION['id_login'];
     $arquivo = $_FILES['arquivoImg'];
     $pasta = '../arquivos/';
     $nomeArquivo = $arquivo['name'];
@@ -67,10 +67,12 @@ if (isset($_FILES['arquivoImg'])) {
                 ?>
 
             </div>
+
             <div class="juntComp">
-                <button class="botao">Mudar Foto</button>
-                <img class="horizont" src="../assets/icons/menuPointer.png" alt="menu">
+                <button onclick="window.location.href='carteiraEditar.php'" class="botao">Mudar foto</button>
+                <img class=" horizont" src="../assets/icons/menuPointer.png" alt="menu">
             </div>
+
         </div>
     </main>
 </body>

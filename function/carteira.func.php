@@ -25,3 +25,20 @@ function SelCarteiraId($connect, $idcarteira)
     $sel->execute();
     return $sel->fetch();
 }
+
+function EditCarteira($connect, $img_carteira, $idcarteira)
+{
+    $editar = "UPDATE carteira SET img_carteira = :img_carteira WHERE id_carteira = :id";
+    $edit = $connect->prepare($editar);
+    $edit->bindParam(':img_carteira', $img_carteira);
+    $edit->bindParam(':id', $idcarteira);
+    return $edit->execute();
+}
+
+function DelCarteira($connect, $idcarteira)
+{
+    $delete = "DELETE FROM carteira WHERE id_carteira = :id";
+    $del = $connect->prepare($delete);
+    $del->bindParam(':id', $idcarteira);
+    return $del->execute();
+}

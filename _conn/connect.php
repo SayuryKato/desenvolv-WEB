@@ -2,7 +2,7 @@
 
 function Connect()
 {
-    $bdcon = "mysql:dbname=cardapioru;host=localhost";
+    $bdcon = "mysql:dbname=cadapioru;host=localhost";
     $bduser = "root";
     $bdpass = "";
 
