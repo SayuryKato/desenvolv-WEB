@@ -22,7 +22,7 @@
                 ?>
 
             </div>
-            <form action="../function/editarPerfil.php" style="width:80%" method="POST">
+            <form action="../function/editarPerfil.func.php" style="width:80%" method="POST">
             
                 <div style="display:block">
                     <div class="div1">
@@ -31,17 +31,17 @@
                         </div>
                         <div class="input-container">
                             <div class="div-label">
-                                <input type="text" value="<?php echo $row["id_usuario"]; ?>">
+                                <input type="hidden" value="<?php echo $row["id_usuario"]; ?>" name="id_usuario">
                                 <label for="nome">Nome </label>
-                                <input type="text" value="<?php echo $row["nome"]; ?> ">
+                                <input type="text" value="<?php echo $row["nome"]; ?> " name="nome">
                             </div>
                             <div class="div-label">
                                 <label for="">Sobrenome</label>
-                                <input type="text" value="<?php echo $row["sobrenome"]; ?> ">
+                                <input type="text" value="<?php echo $row["sobrenome"]; ?> " name="sobrenome">
                             </div>
                             <div class="div-label">
                                 <label for="">E-mail</label>
-                                <input type="text" value="<?php echo $row["email"]; ?> ">
+                                <input type="text" value="<?php echo $row["email"]; ?> " name="email">
                             </div>
                         </div>
                     </div>
@@ -49,21 +49,21 @@
                         <div class="input-container2">
                             <div class="div-label">
                                 <label for="">Telefone</label>
-                                <input type="text" value="<?php echo $row["telefone"]; ?> ">
+                                <input type="text" value="<?php echo $row["telefone"]; ?> " name="telefone">
                             </div>
                             <div class="div-label">
                                 <label for="">Matrícula</label>
-                                <input type="text" value="<?php echo $row["telefone"]; ?> ">
+                                <input type="text" value="<?php echo $row["matricula"]; ?> " name="matricula">
                             </div>
                         </div>
                         <div class="input-container">
                             <div class="div-label">
                                 <label for="">Telefone</label>
-                                <input type="text" value="<?php echo $row["telefone"]; ?> ">
+                                <input type="text" value="<?php echo $row["telefone"]; ?> " name="telefone">
                             </div>
                             <div class="div-label">
-                                <label for="">Matrícula</label>
-                                <input type="text" value="<?php echo $row["telefone"]; ?> ">
+                                <label for="">Matrícula</label> 
+                                <input type="text" value="<?php echo $row["matricula"]; ?> " name="matricula">
                             </div>
                         </div>
                     </div>
