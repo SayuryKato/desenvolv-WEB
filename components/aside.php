@@ -34,12 +34,12 @@ function isActive($page_name, $current_page)
                         <a class="marginLeft" href="cardapio.php">Cardapio</a>
                     </div>
                 </li>
-                <li class="<?= isActive('carteiraUpload.php', $current_page) ?>">
+                <li class="<?= isActive('carteiraVisual.php', $current_page) ?>">
                     <div class="marginLeft central">
                         <span class="material-symbols-outlined">
                             id_card
                         </span>
-                        <a class="marginLeft" href="carteiraUpload.php">Carteira</a>
+                        <a class="marginLeft" href="carteiraVisual.php">Carteira</a>
                     </div>
                 </li>
                 <li class="<?= isActive('perfil.php', $current_page) ?>">
