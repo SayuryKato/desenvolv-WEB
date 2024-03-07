@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 40vh; /* Ajuste a largura conforme necessário */
+  margin-top: 3%;
+  margin-left: 3%;
+  
+  height: 80px;
+}
+#pesquisa {
+  flex: 1; /* Ocupa o espaço disponível */
+  padding: 8px;
+  border-radius: 30px;
+}
+.icon-lupa {
+  width: 27px;
+  height: 27px;
+  margin-left: 8px; /* Ajuste o espaçamento entre o campo de pesquisa e o ícone */
+}
+#content {
+  margin-top: 10%;
+  margin-left: -8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  
+  height: 70vh;
+  width: 60vh; /* largura*/
+}
+
+.square {
+  text-align: center;
+  width: 250px;
+  height: 270px;
+  background-color: hsl(0, 0%, 100%); /* Add your desired background color */
+  margin-bottom: 20px;
+  border: 2px solid #0b3d04;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0,  0, 0, .1);
+  position: relative;
+}
+.square:hover {
+  border: 3px solid #20cd62; /* Ajuste a cor da borda ao passar o cursor */
+}
+.circle-big {
+  width: 140px; /* Adjust the circle size as needed */
+  height: 140px; /* Adjust the circle size as needed */
+  background-color: rgba(0, 159, 16, 0.08); /* Add your desired circle color */
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-small {
+  width: 35px; /* Adjust the circle size as needed */
+  height: 35px; /* Adjust the circle size as needed */
+  background-color: rgba(0, 159, 16, 0.08);; /* Add your desired circle color */
+  border-radius: 50%;
+  position: absolute;
+  left: 88%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content:right;
+  align-items: right;
+}
+.icon {
+  width: 70%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+  max-height: 100%; /* Ensure the image doesn't exceed its container */
+}
+.icon-small {
+  width: 25px; /* Adjust the width as needed */
+  height: 25px; /* Maintain aspect ratio */
+  position: absolute;
+  margin-top: 4px;
+}
+.square h3 {
+  font-size: 20px;
+  margin-top: 180px; /* Adjust the spacing between the circle and the heading */
+}
