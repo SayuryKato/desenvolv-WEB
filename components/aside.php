@@ -1,7 +1,8 @@
 <?php
+// session_start();
+$nomeUsuario = $_SESSION['email'];
 // Obtém o nome da página atual
 $current_page = basename($_SERVER['PHP_SELF']);
-
 // Função para verificar se a página atual corresponde ao link
 function isActive($page_name, $current_page)
 {
@@ -21,7 +22,11 @@ function isActive($page_name, $current_page)
     <div class="menuAside">
         <div class="marginLeft">
             <p class="nomeUsur">Fabilo Paule</p>
-            <p>fdp.ecp19@uea.edu.br</p>
+            <p>
+                <?php
+                echo $nomeUsuario;
+                ?>
+            </p>
         </div>
         <div>
             <p class="letraFina">Principal</p>
