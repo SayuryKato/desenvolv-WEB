@@ -39,6 +39,64 @@ body{
     width: 100%;
 }
 
+/*------------MODAL-----------------*/
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+#popButton{
+    background-color: white;
+    border: none;
+}
+
+.popupMenu {
+    width: 200px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.popupMenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.container:hover .popupMenu {
+    display: block;
+}
+
+.corIcon {
+    color: red;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.juntoIcon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.juntoIcon a{
+    color: red;
+
+}
+
+.juntoIcon:hover {
+    background-color: #f1f1f1;
+}
 
 /*--------Carteira EDITAR-----------*/
 

@@ -36,6 +36,8 @@ if (isset($_FILES['arquivoImg'])) {
     <title>Carteira Estudante</title>
     <link rel="stylesheet" href="../style/carteira.css">
     <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -63,15 +65,46 @@ if (isset($_FILES['arquivoImg'])) {
                             <input name="arquivoImg" type="file" class="fileInput" accept="image/*" multiple>
                             <button type="submit">Enviar</button>
                         </form></div>';
-                }
+                }else{
                 ?>
 
             </div>
 
             <div class="juntComp">
                 <button onclick="window.location.href='carteiraEditar.php'" class="botao">Mudar foto</button>
-                <img class=" horizont" src="../assets/icons/menuPointer.png" alt="menu">
+                <div class="container">
+                    <button id="popButton">
+                        <img class=" horizont" src="../assets/icons/menuPointer.png" alt="menu">
+                    </button>
+                    <div class="popupMenu" id="popupMenu">
+                        <div class="juntoIcon">
+                            <?php
+                            if (isset($_GET['idcarteira'])) {
+                                $delete = DelCarteira($connect, $_GET['idcarteira']);
+                                if ($delete == true) {
+                                    echo "<script>window.location.reload();</script>";
+                                    exit;
+                                }
+                            }
+                            $seletron = SelCarteira($connect);
+                            foreach ($seletron as $value) {
+                                if ($value['id_user'] == $_SESSION['id_login']) {
+                                    $id_carteira = $value['id_carteira'];
+                                    break;
+                                }
+                            }
+                            echo '<span class="material-symbols-outlined corIcon">delete</span>';
+                            echo '<a href="?idcarteira=' . $id_carteira . '">Deletar Carteira</a>';
+
+                            ?>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <?php 
+            }?>
 
         </div>
     </main>
