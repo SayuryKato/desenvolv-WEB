@@ -4,10 +4,12 @@ $nomeUsuario = $_SESSION['email'];
 // Obtém o nome da página atual
 $current_page = basename($_SERVER['PHP_SELF']);
 // Função para verificar se a página atual corresponde ao link
+
 function isActive($page_name, $current_page)
 {
     return ($page_name === $current_page) ? 'active' : '';
 }
+
 ?>
 
 <link rel="stylesheet"
@@ -31,12 +33,12 @@ function isActive($page_name, $current_page)
         <div>
             <p class="letraFina">Principal</p>
             <ul>
-                <li class="<?= isActive('cardapio.php', $current_page) ?>">
+                <li class="<?= isActive('cardapio2.php', $current_page) ?>">
                     <div class="marginLeft central">
                         <span class="material-symbols-outlined">
                             restaurant_menu
                         </span>
-                        <a class="marginLeft" href="cardapio.php">Cardapio</a>
+                        <a class="marginLeft" href="cardapio2.php">Cardapio</a>
                     </div>
                 </li>
                 <li class="<?= isActive('carteiraVisual.php', $current_page) ?>">

@@ -142,3 +142,27 @@ body {
 .botaoFile{
     background-color: #0f8f04;
 }
+
+/*-----------CARDAPIO-----------*/
+.contentCardapio2{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    width: 80%;
+}
+
+.menuCard{
+    width: 520px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testeSay{
+    display: flex;
+    justify-content: space-between;
+}
+
+.centroCardapio{
+    background-color: purple;
+}

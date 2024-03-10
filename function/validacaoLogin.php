@@ -24,7 +24,7 @@ if (isset($_POST['enviar']) && !empty($_POST['email']) && !empty($_POST['senha']
     }
 
     if ($credenciais_corretas) {
-        header('Location: ../pages/cardapio.php');
+        header('Location: ../pages/cardapio2.php');
     } else {
         unset($_SESSION['email']);
         unset($_SESSION['senha']);
