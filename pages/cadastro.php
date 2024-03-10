@@ -14,15 +14,13 @@ $connect = Connect();
     <link rel="stylesheet" href="../style/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
-    @media screen and (max-width: 768px) {
-        .right-side {
-            display: none;
+        @media screen and (max-width: 768px) {
+            .right-side {
+                display: none;
+            }
         }
-    }
     </style>
 </head>
 
@@ -34,8 +32,10 @@ $connect = Connect();
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
         $confSenha = filter_input(INPUT_POST, 'confSenha', FILTER_SANITIZE_SPECIAL_CHARS);
         $naoInformado = 'Não Informado';
-        if ($senha != $confSenha) {
-            echo "<div>As senhas não coincidem!</div>";
+        if (empty($nomeUsur) || empty($email) || empty($senha) || empty($confSenha)) {
+            echo "<div class=\"txtAtencao2\">Todos os campos são obrigatórios!</div>";
+        } elseif ($senha != $confSenha) {
+            echo "<div class=\"txtAtencao2\">As senhas não coincidem!</div>";
         } else {
             // $cadPerfil = CadPerfil($connect, $nomeUsur, $naoInformado, $email, $naoInformado, $naoInformado);
             $cad = CadUser($connect, $email, $senha);
@@ -64,26 +64,24 @@ $connect = Connect();
             <form action="" method="post" class="forms">
                 <div class="input">
                     <label for="nomeUsur">Nome*</label>
-                    <input class="campInput" type="text" name="nomeUsur" id="nomeUsur" placeholder="Digite seu nome">
+                    <input class="campInput" type="text" name="nomeUsur" id="nomeUsur" placeholder="Digite seu nome" require>
                 </div>
                 <div class="input">
                     <label for="email">E-mail*</label>
-                    <input class="campInput" type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                    <input class="campInput" type="email" name="email" id="email" placeholder="Digite seu e-mail" require>
                 </div>
                 <div class="input">
                     <label for="senha">Senha*</label>
-                    <input class="campInput" type="password" name="senha" id="senha" placeholder="*********">
+                    <input class="campInput" type="password" name="senha" id="senha" placeholder="*********" require>
                     <span>
-                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha"
-                            onclick="mostrarSenha('senha')">
+                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha" onclick="mostrarSenha('senha')">
                     </span>
                 </div>
                 <div class="input">
                     <label for="confSenha">Confirmar Senha*</label>
-                    <input class="campInput" type="password" name="confSenha" id="confSenha" placeholder="*********">
+                    <input class="campInput" type="password" name="confSenha" id="confSenha" placeholder="*********" require>
                     <span>
-                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha"
-                            onclick="mostrarSenha('confSenha')">
+                        <img class="icone" src="../assets/icons/senha.png" alt="icon de senha" onclick="mostrarSenha('confSenha')">
                     </span>
                 </div>
                 <div class="central">

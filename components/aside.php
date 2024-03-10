@@ -23,7 +23,8 @@ function isActive($page_name, $current_page)
     </figure>
     <div class="menuAside">
         <div class="marginLeft">
-            <p class="nomeUsur">Fabilo Paule</p>
+            <!-- <p class="nomeUsur">Fabilo Paule</p> -->
+            <p class="nomeUsur">Olá, de novo</p>
             <p>
                 <?php
                 echo $nomeUsuario;
