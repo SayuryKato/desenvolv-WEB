@@ -1,5 +1,6 @@
 <?php
 include "../function/login.func.php";
+include "../function/consultaPerfil.func.php";
 require_once "../_conn/connect.php";
 $connect = Connect();
 ?>
@@ -28,12 +29,15 @@ $connect = Connect();
 <body>
     <?php
     if (isset($_POST['cadastro'])) {
+        $nomeUsur = filter_input(INPUT_POST, 'nomeUsur', FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
         $confSenha = filter_input(INPUT_POST, 'confSenha', FILTER_SANITIZE_SPECIAL_CHARS);
+        $naoInformado = 'Não Informado';
         if ($senha != $confSenha) {
             echo "<div>As senhas não coincidem!</div>";
         } else {
+            // $cadPerfil = CadPerfil($connect, $nomeUsur, $naoInformado, $email, $naoInformado, $naoInformado);
             $cad = CadUser($connect, $email, $senha);
 
             if ($cad == true) {
@@ -58,6 +62,10 @@ $connect = Connect();
                 <p>Cadastre-se</p>
             </div>
             <form action="" method="post" class="forms">
+                <div class="input">
+                    <label for="nomeUsur">Nome*</label>
+                    <input class="campInput" type="text" name="nomeUsur" id="nomeUsur" placeholder="Digite seu nome">
+                </div>
                 <div class="input">
                     <label for="email">E-mail*</label>
                     <input class="campInput" type="email" name="email" id="email" placeholder="Digite seu e-mail">

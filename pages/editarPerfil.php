@@ -1,5 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +26,7 @@
 
             </div>
             <form action="../function/editarPerfil.func.php" style="width:80%" method="POST">
-            
+
                 <div style="display:block">
                     <div class="div1">
                         <div class="img-container">
@@ -62,7 +65,7 @@
                                 <input type="text" value="<?php echo $row["telefone"]; ?> " name="telefone">
                             </div>
                             <div class="div-label">
-                                <label for="">Matrícula</label> 
+                                <label for="">Matrícula</label>
                                 <input type="text" value="<?php echo $row["matricula"]; ?> " name="matricula">
                             </div>
                         </div>
@@ -75,10 +78,10 @@
                     <div style="margin-left: 2rem;width:50%">
                         <input type="submit" value="Salvar Alterações" class="salvar" name="salvar">
                     </div>
-                    
+
                 </div>
             </form>
-            
+
 
 
         <?php

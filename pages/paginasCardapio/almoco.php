@@ -1,9 +1,8 @@
-
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "cardapioru";
+$dbname = "cadapioru";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -22,17 +21,17 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardapio RU - Cardapio</title>
     <link rel="stylesheet" href="../../style/paginasCartapio.css">
-    
+
 
 
 </head>
 
-<body>   
+<body>
 
     <div id="content">
         <h1>Cardápio da Semana - Almoço</h1>
-    
-    <?php
+
+        <?php
     
 
     $diasSemana = ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
@@ -58,8 +57,8 @@ if ($conn->connect_error) {
     $conn->close();
     ?>
     </div>
-    
-</div>
+
+    </div>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../function/carteira.func.php";
 require_once "../_conn/connect.php";
 $connect = Connect();
